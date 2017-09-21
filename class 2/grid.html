@@ -7,18 +7,26 @@
 
 <style>
 #content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 33.3%;
 }
 #sections {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1;
+  display: grid;
+grid-column: 1;
 }
 #sidebar {
-flex: 1;
+grid-column: 2;
 }
 
+@media (max-width: 600px) {
+  #content {
+    grid-template-columns: 100%
+  }
+  #sidebar {
+  grid-column: 1;
+  order: -1;
+}
 
 </style>
 </head>

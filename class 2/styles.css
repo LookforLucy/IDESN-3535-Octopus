@@ -21,7 +21,7 @@ header ul li{
   color: #FFFFFF;
 }
 #content {
-    display: flex;
+    display: grid;
   }
   #section1 {
     background: #F00;
@@ -37,4 +37,11 @@ header ul li{
 #sidebar {
   background: #00FFFF;
   justify-content: flex-end;
+  color: #000000;
 }
+
+@media (max-width: 600px) {
+
+  #content {
+    flex-direction: column-reverse;
+  }
