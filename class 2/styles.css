@@ -1,0 +1,40 @@
+header{
+  background:#000000;
+  height: 44px;
+}
+  header a {
+    color: #FFFFFF;
+  }
+  header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+header ul li{
+  float: left;
+  width: 20%;
+  margin: 10px 0;
+}
+
+.section {
+  padding: 10px;
+  color: #FFFFFF;
+}
+#content {
+    display: flex;
+  }
+  #section1 {
+    background: #F00;
+  }
+#section2 {
+  background: #FF0;
+  color: #000000;
+
+}
+#section3 {
+  background: #00F;
+}
+#sidebar {
+  background: #00FFFF;
+  justify-content: flex-end;
+}
