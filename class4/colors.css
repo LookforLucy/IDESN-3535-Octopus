@@ -1,0 +1,57 @@
+body {
+font-family: 'futura' san-serif;
+}
+
+.button {
+width: 33%;
+height: 100px;
+}
+
+#blob {
+width: 100px;
+height: 100px;
+border-radius: 100px;
+margin: auto;
+border: 1px solid #000;
+margin-top: 100px;
+}
+
+
+#blob.red {
+  background: #FF0000;
+}
+#blob.blue {
+  background: #0000FF;
+}
+#blob.yellow {
+  background:#FFFF00;
+}
+#blob.red.blue {
+  background: #7F00FF;
+}
+#blob.blue.yellow {
+  background: #0DB644;
+}
+#blob.red.yellow {
+  background: #E59C1D;
+}
+#blob.red.blue.yellow {
+  background:#000000;
+}
+
+#activered.enabled {
+  background: #A50334;
+}
+
+#activeblue.enabled {
+  background: #03A7B3;
+}
+
+#activeyellow.enabled {
+  background: #E1C169;
+}
+
+
+</style>
+
+</body>
