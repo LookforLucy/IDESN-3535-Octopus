@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+
+  let percentageAmount = 20;
+
+function update() {
+  const billAmount = parseFloat($("#bill-amount").val());
+  const tipAmount = billAmount * percentageAmount / 100;
+  $("#tip-amount").text(percentageAmount + "%");
+  $("#tip-output").text(tipAmount);
+  $("#total").text(tipAmount + billAmount);
+
+}
+//.text is a function that changes the text of what is being selected in the div
+//document.getElementById(;bill-amount)
+$("#bill-amount").on('keyup', update);
+$("#add-tip").on('click', function(){
+  percentageAmount++;
+  update();
+  //++adds 1 to the percentageAmount
+});
+//what you put in the parenthesis determines what you are selecting
+$("#less-tip").on('click', function(){
+  percentageAmount--;
+  update();
+});
+});
+</script>
+
+</head>
+<body>
+
+  <h1>Tip Calculator</h1>
+  <input id="bill-amount" />
+  <div id="tip-amount">20%</div>
+  <button id="add-tip">Add Tip!</button>
+  <button id="less-tip">Less Tip!</button>
+  <div id="tip-output">0</div>
+  <div id="total">0</div>
+
+</body>
+</html>

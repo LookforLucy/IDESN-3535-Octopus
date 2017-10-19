@@ -8,12 +8,19 @@
   width: 100px;
   height: 100px;
   background-color: #FF0000;
-  transition: background-color 2s, margin 2s, width 2s;
+  transition: background-color 2s, margin 2s, width 2s, height 2s;
 }
 #box.bigbluebox {
   background-color: #0000FF;
   width: 500px;
   height: 500px;
+}
+#box.moved {
+  margin-left: 250px;
+  margin-top: 250px;
+}
+#box:hover {
+  background-color: #00FF00;
 }
 </style>
 
@@ -29,6 +36,9 @@
 const box = document.getElementById("box");
 box.addEventListener('click', function() {
   box.classList.toggle('bigbluebox');
+});
+box.addEventListener('mouseover', function() {
+  box.classList.toggle('moved');
 });
 </script>
 

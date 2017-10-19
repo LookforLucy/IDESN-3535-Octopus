@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tip Calculator</title>
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,700,900" rel="stylesheet">  <link href="../normalize.css" rel="stylesheet" />
+  <link href="tip.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div ID="container">
+  <div class="bill"><h1>BILL AMOUNT</h1>
+    <input type="text"id="bill-amount"/>
+    </div>
+
+
+    <div class="tip-info">
+      <div class="percentage">
+
+
+  <div id="tip-number"></div>
+  <div class="label">PERCENT</div>
+
+<div class="buttons">
+      <button id="minus-button">+</button>
+      <button id="plus-button">-</button>
+
+      <div class="amount"></div></div>
+
+  <div id="tip-amount"></div>
+  <div class="label">TIP</div>
+</div>
+
+
+  <div class="total">
+<h1>TOTAL</h1>
+<div id="all-total"></div>
+
+</div>
+
+
+
+
+<script>
+
+var percentage = document.getElementById("tip-number");
+
+var amount = document.getElementById("tip-amount");
+
+var total = document.getElementById("all-total");
+
+var bill = document.getElementById("bill-amount");
+
+let percentage_amount = 20;
+
+percentage.innerHTML = percentage_amount + "%"
+
+function update() {
+  percentage.innerHTML = percentage_amount + "%"
+
+  bill.value * (percentage_amount / 100)
+
+let tipAmount = parseFloat(bill.value) * parseFloat(percentage_amount / 100)
+amount.innerHTML = "$" + tipAmount.toFixed(2);
+
+var totalCost = parseFloat(bill.value) + tipAmount;
+
+total.innerHTML = "$" + totalCost.toFixed(2);
+
+};
+
+
+bill.addEventListener('keyup', function() {
+update()
+});
+
+const minus = document.getElementById("minus-button")
+minus.addEventListener('click', function(){
+  percentage_amount++;
+  update()
+});
+
+const plus = document.getElementById("plus-button")
+plus.addEventListener('click', function(){
+  percentage_amount--;
+  update()
+});
+
+const tipMath = document.getElementById("tip")
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
