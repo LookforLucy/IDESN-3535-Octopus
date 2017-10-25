@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    TIMER
+  </title>
+<link href="../normalize.css" rel="stylesheet" />
+<link href="timer.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+let seconds = 0;
+</script>
+
+<script>
+function displayTime(amountOfSeconds) {
+//define some temporary variables
+  let hrs = 0;
+  let mins = 0;
+//while amount of seconds is greater than (or equal to) 3600 (3600seconds = 1hr)
+  while (amountOfSeconds >= 3600) {
+//adds one hour
+    hrs++;
+//we've added one hour, lets delete 3600 seconds
+    amountOfSeconds = amountOfSeconds - 3600;
+  }
+  //whilte amout of seconds is greater than (or euqal to) 60 (60 seconds = 1min)
+  while (amountOfSeconds >= 60) {
+    //add one hour
+    mins++;
+    //we've addded one hour, lets delete 3600 seconds
+    amountOfSeconds = amountOfSeconds - 60;
+  }
+//we do not have to loop through seconds because 1s = 1s
+  //updating screen on jquery
+  $("#hours").text(hrs);
+  $("#minutes").text(mins);
+  $("#seconds").text(amountOfSeconds);
+}
+
+
+$(document).ready(function() {
+    $(".control-button").on('click', function() {
+      //get the amount defined in the data attribute of the button that was clicked on
+      const amount = parseInt($(this).data("amount"));
+      //add that amount to our global seconds variable (notes, the negative number will subtract)
+      seconds += amount;
+
+      //We dont want to worry about negative numbers, so take out what bigger
+      //the amount of seconds or 0
+      seconds = Math.max(seconds, 0);
+      //display our new time!
+      displayTime(seconds);
+    });
+
+
+let timer;
+function tick() {
+  //subtratc one seconds
+  seconds--;
+  seconds = Math.max(seconds, 0);
+  displayTime(seconds);
+}
+$("#start-button").on('click', function() {
+  if (timer) {
+    clearInterval(timer);
+    timer = false;
+  } else {
+    timer = setInterval(tick, 1000);
+  }
+});
+})
+
+//Math.max takes two values, it takes the bigger of the two numbers to return to zero
+
+
+
+</script>
+
+</head>
+<body>
+
+<div id= bigbox>
+
+<div id="timer">
+  <div id=timerbox><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
+</div>
+
+<div id="control-buttons">
+  <div class=hoursbox>
+    <div>Hours</div>
+    <button class="control-button" data-amount="-3600">-</button>
+    <button class="control-button" data-amount="3600">+</button>
+  </div>
+  <div class=minutesbox>
+    <div>Minutes</div>
+    <button class="control-button" data-amount="-60">-</button>
+    <button class="control-button" data-amount="60">+</button>
+  </div>
+  <div class=secondsbox>
+    <div>Seconds</div>
+    <button class="control-button" data-amount="-1">-</button>
+    <button class="control-button" data-amount="1">+</button>
+  </div>
+</div>
+<button id="start-button">Start/Stop</button>
+</div>
+
+  </div>
+</time>
+</body>
+</html>
