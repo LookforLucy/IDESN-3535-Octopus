@@ -15,9 +15,10 @@ body {
 }
 
 .bill {
-  width: 75%;
+  width: 33%;
   padding: 25px;
-  background-color: #d8d8d8;
+  background: linear-gradient(to right, #5ADCDD , #F6E1AE)
+
 }
 
 
@@ -32,9 +33,9 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 #bill-amount:focus {
-  background: #6FBFC0;
+  background: #F6E1AE;
   border: 0px;
-  transition: all ease 500ms;
+  transition: all ease 50ms;
   padding: 50px;
   color: #fff
 }
@@ -44,24 +45,26 @@ button, input[type="submit"], input[type="reset"] {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  border-top: 1px solid #fff;
+
 }
 
 .tip-info {
-  flex-direction: row;
+  border-top: 1px solid #fff;
   width: 33%;
+  background: linear-gradient(to right, #5ADCDD , #F6E1AE)
 
 }
 
 #total {
-  width: 75%;
+
   padding: 25px;
   overflow-x: scroll;
   border-top: 1px solid #fff;
 }
 
 .total {
+  border-top: 1px solid #fff;
   margin-top: 50px;
   width: 100%;
   height: 150px;
-  background-color: #d8d8d8;
+  background: linear-gradient(to right, #5ADCDD , #F6E1AE);
