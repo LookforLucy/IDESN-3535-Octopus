@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+
+  const pokeId = 94;
+  const url = "https://pokeapi.co/api/v2/pokemon/"
+$.ajax( {
+  url: url + pokeId,
+  success: function(data){
+    console.log(data);
+    // we calling on the url and fetch data- a way to access that info is by creating  afunction
+    $("#name").text(data.name);
+
+    const imgURL = data.sprites.front_shiny
+    $("body").append(`<img src="${imgURL}"/>`);
+
+    data.types.forEach(function(type){
+      console.log(type.type.name);
+      $("body").append(`<div>${type.type.name}<div>`)
+    });
+  }
+})
+  // API application programming interface -heres some data, the api is a layer between the layer and you and you can ask the api for that data which is a list for pokemon. We'll be using this to find specific pokemon
+// {} define objects, for jquery it needs a url
+});
+</script>
+</head>
+
+<body>
+  <h1 id="name"></h1>
+</body>
+</html>

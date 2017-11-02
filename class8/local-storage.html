@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+  let count = localStorage.getItem('count');
+  // || (double pipe) means "or"
+  // If we called on an API, we could store info into the local storage, that way, you would not have to reload your info all over again. It would just load automatically.
+
+  function updateCount() {
+    $("#count").text(count);
+    localStorage.setItem('count', count);
+  }
+  $("#down").on('click', function(){
+    count--;
+    updateCount();
+  });
+
+  $("#up").on('click', function(){
+    count++;
+    updateCount();
+  });
+
+  updateCount();
+
+});
+</script>
+
+</head>
+<body>
+  <h1>Local Storage</h1>
+
+  <div id="count"></div>
+<button id="down">Down</button>
+<button id="up">Up</button>
+
+</body>
+
+
+
+</html>

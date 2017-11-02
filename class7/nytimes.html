@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+table {
+border-collapse: collapse;
+
+}
+p {
+  list-style: none;
+}
+
+.pub-date {
+  
+}
+
+body {
+    font-family: helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+h1 {
+  letter-spacing: 10px;
+  font-size: 3em;
+}
+h2 {
+  letter-spacing: 10px;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+  var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+
+  var apiKey = "b3bed07491c243788c49ea27dc7fc28d";
+
+$.ajax( {
+  url: url,
+  data: {
+    'api-key': apiKey
+},
+
+
+success: function(result) {
+  const articles = result.response.docs;
+
+  const articleList = document.createElement('ul');
+  $("#main").append(articleList);
+
+  articles.forEach(function(article) {
+    const articleItem = document.createElement('li');
+
+    const articleHeader = document.createElement('h2');
+    articleHeader.innerHTML = article.headline.main;
+    articleItem.append(articleHeader);
+
+    articleList.append(articleItem);
+
+
+
+if (article.multimedia.length > 0 && article.multimedia[0].type === "image"){
+  const articleImage = document.createElement('img');
+  articleImage.src = "https://nytimes.com/" + article.multimedia[0].url;
+  articleItem.append(articleImage);
+  articleItem.classList.add('has-image');
+
+
+const articleSummary = document.createElement('p');
+articleSummary.innerHTML = article.snippet;
+articleItem.append(articleSummary);
+
+const pubDate = document.createElement('div');
+pubDate.classList.add('pub-date');
+pubDate.innerText = new Date(article.pub_date)
+articleItem.append(pubDate);
+
+}
+  });
+},
+error: function(err){
+  throw err;
+ }
+})
+});
+
+
+</script>
+</head>
+<body>
+  <h1>NY TIMES</h1>
+  <h4>THE NEW YORK TIMES</h4>
+
+  <h2>HEADLINES<h2>
+  <div id="headlines" border="1">
+</div>
+  <div id="main"></div>
+  <table>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<link href='styles.css' rel='stylesheet' />
+<link href='../normalize.css' rel='stylesheet' />
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+<script src="template-engine.js"></script>
+<script src="templates.js.html"></script>
+
+
+
+</head>
+<body>
+
+  <script>
+  $(document).ready(function(){
+    $("body").prepend(getTemplate(headerTemplate, {class: 'home', title: 'Home'}));
+  });
+
+  $(document).ready(function(){
+    $("body").append(getTemplate(footerTemplate, {class: 'home', title: 'Home'}));
+  });
+  </script>
+
+<p>Some content for my index page</p>
+</body>
+</html>

@@ -12,6 +12,12 @@
 
 <script>
 let seconds = 0;
+
+function pad(number) {
+  if (number <10){
+    return "0" + number;
+  }
+}
 </script>
 
 <script>
@@ -35,9 +41,9 @@ function displayTime(amountOfSeconds) {
   }
 //we do not have to loop through seconds because 1s = 1s
   //updating screen on jquery
-  $("#hours").text(hrs);
-  $("#minutes").text(mins);
-  $("#seconds").text(amountOfSeconds);
+  $("#hours").text(pad(hrs));
+  $("#minutes").text(pad(mins));
+  $("#seconds").text(pad(amountOfSeconds));
 }
 
 

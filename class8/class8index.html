@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+<script src="template-engine.js"></script>
+<link href="../normalize.css" rel="stylesheet" />
+
+<script>
+$(document).ready(function(){
+  console.log(processTemplate(testString, testContext));
+  const testTemplate = getTemplate(testString, testContext)
+  $("body").prepend(testTemplate);
+  //"append" adds to the bottom, "prepend" adds to the front/top
+});
+</script>
+</head>
+<body>
+  <p> This is my Homepage</p>
+</body>
+</html>
