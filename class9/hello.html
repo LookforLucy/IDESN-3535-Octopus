@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+#name {
+  font-family: sans-serif;
+  font-size: 1.8em;
+  letter-spacing: 5px;
+}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+};
+
+$(document).ready(function(){
+  $("#name").text(getParameterByName("firstName") + " " + getParameterByName("lastName"))
+});
+</script>
+
+</head>
+
+<body>
+  Hello, <span id="name"></span>!
+  <!-- you can put info in query string in order to change one element within a consistent format for web. ie: the name on the hello will change, but all other info will remain the same on all pages.  -->
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

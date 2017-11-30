@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+table {
+border-collapse: collapse;
+
+}
+table li{
+  list-style: none;
+}
+
+body {
+    color: #000;
+    font-family: helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+thead {
+  letter-spacing: 5px;
+}
+h1 {
+  letter-spacing: 10px;
+  font-size: 3em;
+}
+h2 {
+  letter-spacing: 10px;
+}
+
+#loader img {
+  width: 50px;
+  padding: 100px;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+  //DO STUFF HERE
+
+$.ajax( {
+  url:"http://www.bvandorn.com/idesn-3535/schedule.json",
+  data: {},
+  success: function(response) {
+    console.log(response)
+    //This function gets called when we get our file
+
+    for (let i = 0; i<response.classes.length; i++) {
+      const currentClass = response.classes[i];
+      console.log(response.classes)
+//i is a common variable that stands for "index", any variable can be used.
+      //Create a <tr> element via javascript for our class row.
+      const classRow = document.createElement ('tr');
+
+      //setup the class # and Date for our first column.
+      const dateCol = document.createElement('td');
+      dateCol.innerHTML = "Class" + i + "<br />" + currentClass.date;
+      classRow.append(dateCol);
+
+
+
+      const agendaCol = document.createElement('td');
+      //our agenda is an unordered list so we can create a <ul>
+      const agendaList = document.createElement('ul');
+      //We can use forEach as another way to loop through an Array
+      currentClass.agenda.forEach(function(agendaItem){
+        //create list items, set the text as our agendaItem
+        const agendaListItem = document.createElement('li');
+        agendaListItem.innerText = agendaItem;
+        //Append our <li> to our <ul>
+        agendaList.append(agendaListItem);
+      });
+      //append our <ul> into our column.
+      agendaCol.append(agendaList);
+      //add the new column to he class row
+      classRow.append(agendaCol);
+
+
+//HOMEWORK SECTION
+const homeworkCol = document.createElement('td');
+const homeworkList = document.createElement('ul');
+currentClass.homework.forEach(function(homeworkItem){
+  const homeworkListItem = document.createElement('li');
+  homeworkListItem.innerText = homeworkItem;
+  homeworkList.append(homeworkListItem);
+});
+
+homeworkCol.append(homeworkList);
+classRow.append(homeworkCol);
+
+
+//CLASS NOTES
+const notesCol = document.createElement('td');
+const notesList = document.createElement('ul');
+if (currentClass.links){ //not every class has notes!
+  currentClass.links.forEach(function(link){
+    notesList.innerHTML += `<li><a href="${link.link}">${link.name}</a></li>`;
+  });
+}
+notesCol.append(notesList);
+classRow.append(notesCol);
+
+$("#class-schedule > tbody").append(classRow);
+$("#loader").remove();
+
+    }
+
+  }
+
+});
+
+});
+</script>
+
+</head>
+<body>
+  <table>
+  <h1>IDESN 3535</h1>
+  <h4>ADVANCED WEB PROJECTS</h4>
+  <a href="http://bit.ly/2gEbCrd" target="_blank">Syllabus</a>
+
+  <h2>COURSE SCHEDULE<h2>
+    <table id="class-schedule" border="1">
+      <thead>
+        <tr><th>Class</th><th>Agenda</th><th>Homework</th><th>Class Notes</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+<div id="loader">
+  <img src="https://i.pinimg.com/originals/6e/38/5e/6e385eee15584c433d3eb31111dff648.jpg"></div>
+<!-- This is called a non-determinant loader- which means that we dont know how long it will take to load and it will essentially load forever -->
+</body>
+</html>
