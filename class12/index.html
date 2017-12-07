@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ratings API</title>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="./rating.js"></script>
+  <!-- .. indicated that it will take the file from the parent folder, "." indiciates that it will take it from the same folder -->
+
+<script>
+function renderRatings(){
+  $("#ratings").html("");
+
+  const ratings = getRatings().ratings;
+  let totalStars = 0;
+  let totalRatings = 0;
+  ratings.forEach(function(r){
+    if (r){
+      const row = document.createElement('div');
+      row.innerText = `Stars: ${r.stars} Comment: ${r.comment}`;
+      // string interperlation ``
+      $("#ratings").append(row);
+      totalRatings++;
+      // totalStars = totalStars + r.stars;
+      totalStars+= r.stars;
+    }
+  });
+  const averageRating = totalStars / totalRatings;
+  $("#average").text("Average:" + averageRating);
+}
+$(document).ready(function(){
+renderRatings()
+  $("#mybutton").on('click', function(){
+    const starAmount = parseInt($("#my-dropdown").val());
+    const comment= $("#my-comment").val();
+    addRating({stars: starAmount, comment: comment});
+    renderRatings();
+    $("#my-comment").val("");
+    $("#my-dropdown").val("1");
+  });
+});
+</script>
+
+</head>
+
+<body>
+  <h1>Ratings API</h1>
+
+  <div id="average">Average</div>
+
+<div id="ratings"></div>
+<select id="my-dropdown">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<input id="my-comment" />
+
+<button id="mybutton">Rate</button>
+  <!-- if you have backslash end tag, you dont need a /input> -->
+
+</body>
+
+
+
+</html>

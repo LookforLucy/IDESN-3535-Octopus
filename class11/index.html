@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+
+<script>
+$(document).ready(function(){
+  $("#myRange").on('change', function(){
+    // alert($(this).val());
+    $("#myValue").text($(this).val());
+  });
+});
+
+</script>
+
+</head>
+<body>
+
+<input id="myRange" type="range" min="0" max="10" step="1" />
+<div id="myValue"></div>
+
+</body>
+</html>

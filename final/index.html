@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <title>Lucy's Final</title>
 
 
@@ -10,6 +10,7 @@
 <script src="utils.js"></script>
 <link href="normalize.css" rel="stylesheet" />
 <link href="styles.css" rel="stylesheet" />
+<script src="templates.js.html"></script>
 
 <script>
 $(document).ready(function(){
@@ -17,9 +18,31 @@ $(document).ready(function(){
 
 });
 </script>
+<!-- Prepend header template keeps header at top -->
+<script>
+$(document).ready(function(){
+  $("body").prepend(getTemplate(headerTemplate, {class: 'home', title: 'Home'}));
+});
+
+// append footer adds footer to bottom
+$(document).ready(function(){
+  $("body").append(getTemplate(footerTemplate, {class: 'home', title: 'Home'}));
+});
+</script>
+
 </head>
 
 <body>
-  <h1>Lucy's Final</h1>
+<div id="container">
+
+  <div class="homeimage">
+<img src="images/homeglass.jpeg">
+</div>
+</div>
+
+
+
+
+
 </body>
 </html>

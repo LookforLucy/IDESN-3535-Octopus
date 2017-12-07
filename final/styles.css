@@ -1,3 +1,201 @@
 body {
-  color:#00F;
+  display:flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  color:#000;
+}
+
+
+#container{
+  width: 85%;
+  margin-top:10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  background: #E4B2DB;
+}
+
+#exhibitimages img{
+  width:70%;
+
+}
+/*This section down is on the ABOUT page*/
+.aboutglass{
+  background-image: url(images/glasshouse.jpg);
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+
+}
+
+.whitebox{
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+
+}
+
+.pinkbox{
+  background-color:#EBD2DB;
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+
+}
+
+.greenbox{
+  background-color: #BAD7C0;
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+
+}
+
+.bluebox{
+  background-color: #65B1B7;
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+
+}
+
+/*This section down are images on the EXHIBIT page*/
+.film{
+  background-image: url(images/film.png);
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.bodyart{
+  background-image: url(images/bodyart.png);
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.comfort{
+  background-image: url(images/comfort.png);
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+
+.fluxus{
+  background-image: url(images/fluxus.png);
+  width: 90%;
+  height:500px;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+
+header{
+  width: 90%;
+  margin-top:30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFF;
+  color: #000;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+ul li {
+  text-align: right;
+  font-size: 24px;
+  list-style: none;
+}
+
+.ghlogo{
+  height: 100px;
+  width: 100px;
+}
+
+ul li: hover {
+  background: #FFF;
+}
+
+ul.home li.home-nav {
+  border-bottom: 10px solid #E4B2DB;
+}
+
+ul.blog li.about-nav {
+  border-bottom: 10px solid #E4B2DB;
+}
+
+ul.about li.exhibit-nav {
+  border-bottom: 10px solid #E4B2DB;
+}
+
+ul.about li.visit-nav {
+  border-bottom: 10px solid #E4B2DB;
+}
+
+ul.about li.contact-nav {
+  border-bottom: 10px solid #E4B2DB;
+}
+
+.home-nav {
+color:#000;
+margin-top: 50px;
+}
+
+.about-nav{
+color:#000;
+margin-top: 50px;
+}
+
+.exhibit-nav{
+color:#000;
+margin-top: 50px;
+}
+
+.visit-nav{
+color:#000;
+margin-top: 50px;
+}
+
+.contact-nav{
+color:#000;
+margin-top: 50px;
+}
+
+
+.about{
+
+}
+.exhibit{
+
+}
+
+.visit{
+
+}
+
+.contact{
+
+}
+
+
+
+footer {
+  width: 100%;
+  height: 100px;
+  background: #7FD1DE;
+  color: #FFF;
+
 }
