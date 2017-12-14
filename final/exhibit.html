@@ -10,7 +10,8 @@
 <script src="utils.js"></script>
 <link href="normalize.css" rel="stylesheet" />
 <link href="styles.css" rel="stylesheet" />
-<script src="templates.js.html"></script>
+<script src="nav.js.html"></script>
+<script src="menu.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -22,12 +23,12 @@ $(document).ready(function(){
 <!-- Prepend header template keeps header at top -->
 <script>
 $(document).ready(function(){
-  $("body").prepend(getTemplate(headerTemplate, {class: 'home', title: 'Home'}));
+  $("body").prepend(getTemplate(headerTemplate, {class: 'exhibit', title: 'Exhibit'}));
 });
 
 // append footer adds footer to bottom
 $(document).ready(function(){
-  $("body").append(getTemplate(footerTemplate, {class: 'home', title: 'Home'}));
+  $("body").append(getTemplate(footerTemplate, {class: 'exhibit', title: 'Exhibit'}));
 });
 </script>
 </head>
@@ -36,12 +37,39 @@ $(document).ready(function(){
   <div id="container">
 <div id="exhibitimages">
 
-<div class="film"></div>
-<div class="bodyart"></div>
-<div class="comfort"></div>
-  <div class="fluxus"></div>
+<a href="file:///Users/LucyNguyen/Desktop/lesleyuniversity/fa17/web3535/octopus/final/filmphoto.html">
+  <div class="film">
+  <div class="floatingbox1"/>
+<h2>FILM <br>
+  + <br>
+  PHOTO<br></h2>
 </div>
-  <div class="exhibit"><h1>EXHIBIT</h1>
+</div>
+</a>
+
+<a href="file:///Users/LucyNguyen/Desktop/lesleyuniversity/fa17/web3535/octopus/final/bodyart.html">
+<div class="bodyart">
+  <div class="floatingbox2"/>
+<h2>BODY<br>ART</h2></div>
+</div>
+</a>
+
+<a href="file:///Users/LucyNguyen/Desktop/lesleyuniversity/fa17/web3535/octopus/final/comfort.html">
+<div class="comfort">
+  <div class="floatingbox3"/>
+<h2>COMFORT<br>ZONES</h2></div>
+</div>
+</a>
+
+<a href="file:///Users/LucyNguyen/Desktop/lesleyuniversity/fa17/web3535/octopus/final/fluxus.html">
+  <div class="fluxus">
+    <div class="floatingbox4"/>
+  <h2>FLUXUS<br>GROUP</h2></div>
+  </div>
+</div>
+</div>
+</a>
+  <div class="exhibitline"><h1>EXHIBIT</h1>
   </div>
 </body>
 </html>

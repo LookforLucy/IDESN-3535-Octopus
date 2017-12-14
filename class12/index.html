@@ -27,7 +27,8 @@ function renderRatings(){
     }
   });
   const averageRating = totalStars / totalRatings;
-  $("#average").text("Average:" + averageRating);
+  $("#average").text("Average:" + averageRating.toFixed(2));
+  $("#allstars").css("width", (averageRating/5 * 100) + "%");
 }
 $(document).ready(function(){
 renderRatings()
@@ -42,13 +43,38 @@ renderRatings()
 });
 </script>
 
+<style>
+#average-stars {
+  position: relative;
+  width: 84px;
+  height: 15px;
+}
+#nostars, #allstars {
+  position: absolute;
+  left:0;
+  top:0;
+}
+#allstars{
+  overflow: hidden;
+  transition: width 1000ms;
+  width: 50%;
+}
+
+</style>
+
 </head>
 
 <body>
   <h1>Ratings API</h1>
 
-  <div id="average">Average</div>
+  <div id="average"></div>
 
+  <div id="average-stars">
+    <div id="nostars">
+      <img src="nostars.svg"/></div>
+      <div id="allstars">
+        <img src="allstars.svg"/></div>
+</div>
 <div id="ratings"></div>
 <select id="my-dropdown">
   <option value="1">1</option>

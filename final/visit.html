@@ -10,7 +10,7 @@
 <script src="utils.js"></script>
 <link href="normalize.css" rel="stylesheet" />
 <link href="styles.css" rel="stylesheet" />
-<script src="templates.js.html"></script>
+<script src="nav.js.html"></script>
 
 <script>
 $(document).ready(function(){
@@ -22,19 +22,30 @@ $(document).ready(function(){
 <!-- Prepend header template keeps header at top -->
 <script>
 $(document).ready(function(){
-  $("body").prepend(getTemplate(headerTemplate, {class: 'home', title: 'Home'}));
+  $("body").prepend(getTemplate(headerTemplate, {class: 'visit', title: 'Visit'}));
 });
 
 // append footer adds footer to bottom
 $(document).ready(function(){
-  $("body").append(getTemplate(footerTemplate, {class: 'home', title: 'Home'}));
+  $("body").append(getTemplate(footerTemplate, {class: 'visit', title: 'Visit'}));
 });
 </script>
 </head>
 
 <body>
-  <div id="container"></div>
-  <div class="visit"><h1>VISIT</h1>
+  <div class="visitline"><h1>VISIT</h1></div>
+
+  <div id="container">
+    199 Elm Street<br>
+    New Canaan, CT 08640
+    <br>
+<br>
+HOURS:<br>
+Mon-Fri 9am-4pm<br>
+Sat 9am- 2pm<br>
+Sun Closed<p>
+<img src="images/map.png" width=300px height=300px/>
+
   </div>
 </body>
 </html>

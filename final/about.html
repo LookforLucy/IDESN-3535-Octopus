@@ -10,7 +10,8 @@
 <script src="utils.js"></script>
 <link href="normalize.css" rel="stylesheet" />
 <link href="styles.css" rel="stylesheet" />
-<script src="templates.js.html"></script>
+<script src="nav.js.html"></script>
+<script src="menu.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -22,29 +23,55 @@ $(document).ready(function(){
 <!-- Prepend header template keeps header at top -->
 <script>
 $(document).ready(function(){
-  $("body").prepend(getTemplate(headerTemplate, {class: 'home', title: 'Home'}));
+  $("body").prepend(getTemplate(headerTemplate, {class: 'about', title: 'About'}));
 });
 
 // append footer adds footer to bottom
 $(document).ready(function(){
-  $("body").append(getTemplate(footerTemplate, {class: 'home', title: 'Home'}));
+  $("body").append(getTemplate(footerTemplate, {class: 'about', title: 'About'}));
 });
 </script>
 </head>
 
 <body>
+    <div class="aboutline"><h1>ABOUT</h1></div>
   <div id="container">
 
+
+
+
+  <div class="aboutglass"><p>GLASS<br>HOUSE</p></div>
+
+  <div class="whitebox">
+  <div class="whitetitlebox">
+    THE LOOKING GLASS</div>
+    <div class="stroke"></div>
+    <div class="whitetextbox">
+<p>A form of spontaneous, non-linear action, revolutionized the practice of performance art. Allan Kaprow was among the many artists who focused on an intellectual and theorized view of art. Kaprow called for an end to craftsmanship and permanece in art and instead demanded that artists shift their attention to "non-concrete" or ephemperal, modes of production.
+</p>
+</div>
+</div>
+
+
+
+  <div class="pinkbox">
+<iframe title="New York Times Video - Embed Player" width="480" height="321" frameborder="0" scrolling="no" allowfullscreen="true" marginheight="0" marginwidth="0" id="nyt_video_player" src="https://static01.nyt.com/video/players/offsite/index.html?videoId=100000004992978"></iframe>
   </div>
 
+  <div class="greenbox">
+<p>The Glass House is best understood as a pavilion for viewing the surrounding landscape. Invisible from the road, the house sits on a promontory overlooking a pond with views towards the woods beyond. The house is 55 feet long and 33 feet wide, with 1,815 square feet. Each of the four exterior walls is punctuated by a centrally located glass door that opens onto the landscape. The house, which ushered the International Style into residential American architecture, is iconic because of its innovative use of materials and its seamless integration into the landscape. Philip Johnson, who lived in the Glass House from 1949 until his death in 2005, conceived of it as half a composition, completed by the Brick House. Both buildings were designed in 1945-48.
+  <br>
+  <br>
+  The floor plan of the Glass House reveals a fairly traditional living space. Although there are no walls, Philip Johnson referred to areas within the rectangular, loft-like space as “rooms.” There is a kitchen, dining room, living room, bedroom, hearth area, bathroom, and an entrance area. Despite the very modern style of the house, the layout could easily be a colonial home, something Johnson noted.
 
-  <div class="about"><h1>ABOUT</h1></div>
+As detailed in the floor plan, the placement of furniture throughout the house is precise. A rug defines the living room area, while seating around a low table anchors the space. The living room is the focal point of the house, and like nested boxes, it is the center from which the site is successively occupied: living room, house, courtyard, and landscape. The fixed furniture plan contrasts with the surrounding landscape, which is ever-changing through weather and season.
 
-  <div class="aboutglass"></div>
-  <div class="whitebox"></div>
-  <div class="pinkbox"></div>
-  <div class="greenbox"></div>
-  <div class="bluebox"></div>
-
+The “room” with the greatest privacy is the bedroom, which also contains a small desk. It is separated from the living room by a series of built-in storage cabinets with walnut veneer. Although today open space floor-plans are common, it was highly unusual in 1949.
+</p>
+  </div>
+  <div class="bluebox">
+<img src="images/ghpic.jpg" width=100% />
+  </div>
+</div>
 </body>
 </html>

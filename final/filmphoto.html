@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<title>Lucy's Final</title>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script src="utils.js"></script>
+<link href="normalize.css" rel="stylesheet" />
+<link href="styles.css" rel="stylesheet" />
+<script src="nav.js.html"></script>
+<script src="menu.js"></script>
+
+<script>
+$(document).ready(function(){
+
+
+});
+</script>
+<!-- Prepend header template keeps header at top -->
+<script>
+$(document).ready(function(){
+  $("body").prepend(getTemplate(headerTemplate, {class: 'exhibit', title: 'exhibit'}));
+});
+
+// append footer adds footer to bottom
+$(document).ready(function(){
+  $("body").append(getTemplate(footerTemplate, {class: 'exhibit', title: 'exhibit'}));
+});
+</script>
+
+</head>
+
+<body>
+<div id="container">
+  <div class="filmimage">
+    <img src="images/filmimage.png" width= 100%; height= 400px;></div>
+
+
+
+<div class="aboutfilmgreen">
+  <p>Photography had adapted the traditions of modernist painting and sculpture since the 1920s with Stieglitz and the Sucessionists. Elevating photography to a fine art was seen only viable by mimicking painting and sculpture.
+    Abandoning Pictorialism in the 20s, and influenced by the growth of mass communications, the avant-garde experiments led to an imitation of photojournalism. “Photojournalism… elaborated a new kind of picture, utilitarian in its determination by editorial assignment and novel in its seizure of the instantaneous, of the “news event” as it happened.” In the sixties, younger artists bored with the traditions adopted by photography from painting and sculpture agitated the medium by returning to the fundamental “auto-critique” of art associated with the tradition of the avant-garde.
+</p></div>
+
+
+<div class="filmblue">
+  <img src="images/schlemmer.png" width= 50% height= 300px/>
+<div class="filmname1"><h2>OSKAR SCHLEMMER</h2>
+    <p>(September 4, 1888 – 13 April 1943) was a German painter, sculptor, designer and choreographer associated with the Bauhaus school. In 1923 he was hired as Master of Form at the Bauhaus theatre workshop, after working some time at the workshop of sculpture. His most famous work is "Triadisches Ballett," in which the actors are transfigured from the normal to geometrical shapes. Also in Slat Dance and Treppenwitz, the performers' costumes make them into living sculpture, as if part of the scenery.
+    </p>
+</div>
+</div>
+
+
+<div class="filmpink"><img src="images/vertov.png" width= 50% height= 300px/>
+<div class="filmname2"><h2>DZIGA VERTOV</h2>
+<p>(January 2, 1896 – 12 February 1954) was a Soviet pioneer documentary film and newsreel director, as well as a cinema theorist. His filming practices and theories influenced the cinéma vérité style of documentary movie-making and the Dziga Vertov Group, a radical film-making cooperative which was active from 1968 to 1972.</p>
+</div>
+</div>
+
+<div class="filmgreen">
+  <img src="images/mapplethorpe.png" width= 50% height= 300px/>
+  <div class="filmname3"><h2>ROBERT MAPPLTHORPE</h2>
+<p>(November 4, 1946 – March 9, 1989) was an American photographer, known for his sensitive yet blunt treatment of controversial subject-matter in the large-scale, highly stylized black and white medium of photography. His work featured an array of subjects, including celebrity portraits, male and female nudes, self-portraits and still-life images of flowers. His most controversial work is that of the underground BDSM scene in the late 1960s and early 1970s of New York City. The homoeroticism of this work fueled a national debate over the public funding of controversial artwork.</p>
+</div>
+<div class="exhibitline"><h1>EXHIBIT</h1>
+</div>
+
+
+</body>
+</html>

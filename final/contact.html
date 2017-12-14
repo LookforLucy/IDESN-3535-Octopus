@@ -10,7 +10,7 @@
 <script src="utils.js"></script>
 <link href="normalize.css" rel="stylesheet" />
 <link href="styles.css" rel="stylesheet" />
-<script src="templates.js.html"></script>
+<script src="nav.js.html"></script>
 
 <script>
 $(document).ready(function(){
@@ -22,19 +22,19 @@ $(document).ready(function(){
 <!-- Prepend header template keeps header at top -->
 <script>
 $(document).ready(function(){
-  $("body").prepend(getTemplate(headerTemplate, {class: 'home', title: 'Home'}));
+  $("body").prepend(getTemplate(headerTemplate, {class: 'contact', title: 'Contact'}));
 });
 
 // append footer adds footer to bottom
 $(document).ready(function(){
-  $("body").append(getTemplate(footerTemplate, {class: 'home', title: 'Home'}));
+  $("body").append(getTemplate(footerTemplate, {class: 'contact', title: 'Contact'}));
 });
 </script>
 </head>
 
 <body>
   <div id="container"></div>
-  <div class="contact"><h1>CONTACT</h1>
+  <div class="contactline"><h1>CONTACT</h1>
   </div>
 </body>
 </html>

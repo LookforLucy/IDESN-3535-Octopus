@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<title>Lucy's Final</title>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script src="utils.js"></script>
+<link href="normalize.css" rel="stylesheet" />
+<link href="styles.css" rel="stylesheet" />
+<script src="nav.js.html"></script>
+<script src="menu.js"></script>
+
+<script>
+$(document).ready(function(){
+
+
+});
+</script>
+<!-- Prepend header template keeps header at top -->
+<script>
+$(document).ready(function(){
+  $("body").prepend(getTemplate(headerTemplate, {class: 'exhibit', title: 'exhibit'}));
+});
+
+// append footer adds footer to bottom
+$(document).ready(function(){
+  $("body").append(getTemplate(footerTemplate, {class: 'exhibit', title: 'exhibit'}));
+});
+</script>
+
+</head>
+
+<body>
+<div id="container">
+
+
+<div class="filmblue">
+  <img src="images/abramovic.png" width= 50% height= 300px/>
+<div class="filmname1"><h2>MARINA ABRAMOVIC</h2>
+    <p>(November 30, 1946) is a Serbian performance artist.[1] Her work explores the relationship between performer and audience, the limits of the body, and the possibilities of the mind. Active for over four decades, Abramović has been described as the "grandmother of performance art." She pioneered a new notion of identity by bringing in the participation of observers, focusing on "confronting pain, blood, and physical limits of the body.
+    </p>
+</div>
+</div>
+
+
+<div class="filmpink"><img src="images/carolee.png" width= 50% height= 300px/>
+<div class="filmname2"><h2>CAROLEE SCHNEEMANN</h2>
+<p>(October 12, 1939) is an American visual artist, known for her discourses on the body, sexuality and gender.[1] She received a B.A. from Bard College and a Master of Fine Arts from the University of Illinois. Her work is primarily characterized by research into visual traditions, taboos, and the body of the individual in relation to social bodies. Her works have been shown at the Los Angeles Museum of Contemporary Art, the Museum of Modern Art in New York, the London National Film Theatre, and many other venues.</p>
+</div>
+</div>
+
+<div class="filmimage">
+  <img src="images/bodyart.png" width= 100%; height= 400px;></div>
+
+
+<div class="filmgreen">
+  <img src="images/vito.png" width= 50% height= 300px/>
+  <div class="filmname3"><h2>VITO ACCONCI</h2>
+<p>(January 24, 1940 – April 27, 2017)[2][3] was an American designer, landscape architect, performance and installation artist.Acconci began his career as a poet, editing 0 TO 9 with Bernadette Mayer in the late 1960s. In the late 1960s, Acconci transformed himself into a performance and video artist using his own body as a subject for photography, film, video, and performance. Most of his early work incorporated subversive social comment. His performance and video work was marked heavily by confrontation and Situationism. In the mid-1970s, Acconci expanded his métier into the world of audio/visual installations.</p>
+</div>
+<div class="exhibitline"><h1>EXHIBIT</h1>
+</div>
+
+
+</body>
+</html>
